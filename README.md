@@ -1,8 +1,8 @@
 # PrivaCred
 
-**Read the dissertation (PDF):** https://dominicdamire.github.io/privacred-demo/PrivaCred-dissertation.pdf
+**Read the dissertation (PDF):** https://dominicdamire.github.io/privacred/PrivaCred-dissertation.pdf
 
-**[Live demo](https://dominicdamire.github.io/privacred-demo/)**: generate and verify a Groth16 or PLONK proof in your browser.
+**[Live demo](https://dominicdamire.github.io/privacred/)**: generate and verify a Groth16 or PLONK proof in your browser.
 
 > **Public demo repository.** The root of this repository is the built, static browser demo (served by GitHub Pages); README, charts and screenshots are the write-up. **Source code is private; available on request** (zalyatovdamiredominic@gmail.com).
 
@@ -31,7 +31,7 @@ Captured from the live demo (headless Chrome). Left: the page on load. Right: af
 - **Verifier** checks the BBS+ proof, the SNARK proof, that both refer to the same `C`, the predicate parameters, a one-time nonce and a locally cached revocation list. It never contacts the issuer and never sees an attribute value.
 - **Predicate compiler** turns range, equality and set-membership predicates (AND / OR) into Circom circuits. Nine demo predicates are registered.
 - **Unlinkability**: a different pairwise DID per verifier, and commitment pools for a bounded number of unlinkable presentations.
-- **Browser demo**: a Vite page where the proof is generated in the browser (Groth16 or PLONK). The [live version](https://dominicdamire.github.io/privacred-demo/) also verifies in the browser; run against the demo server, the proof is checked by the server's verifier.
+- **Browser demo**: a Vite page where the proof is generated in the browser (Groth16 or PLONK). The [live version](https://dominicdamire.github.io/privacred/) also verifies in the browser; run against the demo server, the proof is checked by the server's verifier.
 - **Evaluation harness** (E1 to E9) compares PrivaCred with three mock baselines: centralised KYC, OAuth 2.0 / OIDC and Sign-In With Ethereum.
 
 **Tech:** TypeScript (npm workspaces, strict mode), Circom 2 and snarkjs 0.7.6 (Groth16 and PLONK), Poseidon via circomlibjs, `@digitalbazaar/bbs-signatures`, Express, Jest. Python (numpy, pandas, matplotlib) for the evaluation.
